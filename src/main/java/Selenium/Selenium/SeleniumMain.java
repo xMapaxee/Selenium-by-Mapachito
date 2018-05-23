@@ -11,10 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumMain {
 	public static void main(String[] args) throws IOException {
-		DriverSeleniumEdge driver2 = new DriverSeleniumEdge();
-		//DriverSeleniumChrome driver2 = new DriverSeleniumChrome();
-		//DriverSeleniumFirefox driver2 = new DriverSeleniumFirefox();
-		//DriverSeleniumFirefox driver = new DriverSeleniumFirefox();
+		// DriverSeleniumEdge driver2 = new DriverSeleniumEdge();
+		DriverSeleniumChrome driver2 = new DriverSeleniumChrome();
+		// DriverSeleniumFirefox driver2 = new DriverSeleniumFirefox();
+		// DriverSeleniumFirefox driver = new DriverSeleniumFirefox();
 		try {
 			// DriverSeleniumFirefox driver = new DriverSeleniumFirefox();
 			// driver.getDriver().get("https://www.google.es");
@@ -92,7 +92,25 @@ public class SeleniumMain {
 			// driver2.getDriver().findElements(By.className("table_tooltip_wrapper")).stream()
 			// .forEach(p -> System.out.println(p.getText()));
 
-			driver2.getDriver().get("https://www.google.es");
+			driver2.getDriver().get("http://slither.io/");
+			driver2.getDriver().findElement(By.id("nick")).sendKeys("Maldito Simio Analfabeto" + Keys.ENTER);
+
+			for (int i = 1;; i++) {
+
+				for (int j = 0; j < 20; j++) {
+					driver2.getDriver().findElement(By.tagName("body")).sendKeys(Keys.ARROW_RIGHT);
+
+				}
+				for (int j = 0; j < 21; j++) {
+					driver2.getDriver().findElement(By.tagName("body")).sendKeys(Keys.ARROW_LEFT);
+				}
+				
+				for (int j = 0; j < 5; j++) {
+					driver2.getDriver().findElement(By.tagName("body")).sendKeys(Keys.SPACE);
+					
+					
+				}
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
