@@ -8,7 +8,7 @@ public abstract class DriverSelenium {
 
 	static protected WebDriver driver;
 
-	public WebDriver getDriver()	{
+	public WebDriver getDriver() {
 		return this.driver;
 	}
 
@@ -18,9 +18,13 @@ public abstract class DriverSelenium {
 
 			Runtime.getRuntime().exec("taskkill /F /IM geckodriver.exe");
 
-		} else {
+		} else if (getDriver() instanceof DriverSeleniumChrome) {
 
-			Runtime.getRuntime().exec("taskkill /F /IM chromedriver.exe");
+			Runtime.getRuntime().exec("taskkill /F /IM chromedriver64.exe");
+
+		} else if (getDriver() instanceof DriverSeleniumEdge) {
+
+			Runtime.getRuntime().exec("taskkill /F /IM MicrosoftWebDriver.exe");
 
 		}
 

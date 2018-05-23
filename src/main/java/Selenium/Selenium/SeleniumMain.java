@@ -11,7 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class SeleniumMain {
 	public static void main(String[] args) throws IOException {
-		DriverSeleniumFirefox driver2 = new DriverSeleniumFirefox();
+		DriverSeleniumEdge driver2 = new DriverSeleniumEdge();
+		//DriverSeleniumChrome driver2 = new DriverSeleniumChrome();
+		//DriverSeleniumFirefox driver2 = new DriverSeleniumFirefox();
+		//DriverSeleniumFirefox driver = new DriverSeleniumFirefox();
 		try {
 			// DriverSeleniumFirefox driver = new DriverSeleniumFirefox();
 			// driver.getDriver().get("https://www.google.es");
@@ -73,17 +76,23 @@ public class SeleniumMain {
 			// }
 			// }
 
-			driver2.getDriver().get("https://www.eltiempo.es");
-			driver2.getDriver().findElement(By.id("inputSearch")).sendKeys("Ecija" + Keys.ENTER);
-			final WebDriverWait wait = new WebDriverWait(driver2.getDriver(), 20);
-			wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Écija, Sevilla")));
-			driver2.getDriver().findElement(By.partialLinkText("Écija, Sevilla")).click();
-			wait.until(ExpectedConditions.elementToBeClickable(By.className("m_table_weather_day_temp_wrapper")));
-			driver2.getDriver().findElements(By.className("m_table_weather_day_temp_wrapper")).stream()
-					.filter(p -> p.getAttribute("outerHTML").contains("25 May, 14:00")).findFirst().get().click();
+			// driver2.getDriver().get("https://www.eltiempo.es");
+			// driver2.getDriver().findElement(By.id("inputSearch")).sendKeys("Ecija" +
+			// Keys.ENTER);
+			// final WebDriverWait wait = new WebDriverWait(driver2.getDriver(), 20);
+			// wait.until(ExpectedConditions.elementToBeClickable(By.partialLinkText("Écija,
+			// Sevilla")));
+			// driver2.getDriver().findElement(By.partialLinkText("Écija,
+			// Sevilla")).click();
+			// wait.until(ExpectedConditions.elementToBeClickable(By.className("m_table_weather_day_temp_wrapper")));
+			// driver2.getDriver().findElements(By.className("m_table_weather_day_temp_wrapper")).stream()
+			// .filter(p -> p.getAttribute("outerHTML").contains("25 May,
+			// 14:00")).findFirst().get().click();
+			//
+			// driver2.getDriver().findElements(By.className("table_tooltip_wrapper")).stream()
+			// .forEach(p -> System.out.println(p.getText()));
 
-			driver2.getDriver().findElements(By.className("table_tooltip_wrapper")).stream()
-					.forEach(p -> System.out.println(p.getText()));
+			driver2.getDriver().get("https://www.google.es");
 
 		} catch (Exception e) {
 			e.printStackTrace();
